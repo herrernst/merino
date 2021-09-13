@@ -20,3 +20,9 @@ serde = "1"
 serde_derive = "1"
 tokio = { version = "1", features = ["full"] }
 thiserror = "1"
+
+[profile.release]
+#strip = true  # Automatically strip symbols from the binary.
+#opt-level = "z"  # Optimize for size.
+lto = true
+panic = "abort"
